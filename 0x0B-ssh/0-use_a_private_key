@@ -1,13 +1,3 @@
 #!/usr/bin/env bash
-
-# Check if the hostname is passed as an argument
-if [ -z "$1" ]; then
-  echo "Usage: $0 <hostname>"
-  exit 1
-fi
-
-# Define the hostname
-HOSTNAME=$1
-
-# Connect to the server using ssh with the specified options
-ssh -i ~/.ssh/school -o "User=ubuntu" "$HOSTNAME"
+# Connects to server  with key in ~/.ssh/id_rsa.pub | ~/.ssh/authorized_keys
+ssh -i ~/.ssh/school ubuntu@
