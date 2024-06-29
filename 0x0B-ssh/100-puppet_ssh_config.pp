@@ -1,3 +1,5 @@
+# Setting up my client config file
+include stdlib
 # Ensure the .ssh directory exists for the user
 file { '/home/ubuntu/.ssh':
   ensure => directory,
