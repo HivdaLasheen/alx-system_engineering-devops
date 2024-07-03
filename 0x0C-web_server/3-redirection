@@ -1,18 +1,30 @@
 #!/usr/bin/env bash
 # Configure a new Nginx server so that /redirect_me is redirecting to another page
 
-# Update package list and install nginx
 sudo apt-get -y update
 sudo apt-get -y install nginx
-
-# Allow HTTP traffic through the firewall
 sudo ufw allow 'Nginx HTTP'
-
-# Create a simple HTML file with "Hello World!"
 echo "Hello World" | sudo tee /var/www/html/index
 
-# Add redirection rule for /redirect_me to Nginx configuration
-sudo sed -i '/listen 80 default_server;/a \    location = /redirect_me {\n        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n    }' /etc/nginx/sites-available/default
+# Multiline replacement for the Nginx configuration file
+new_string="server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    
+    root /var/www/html;
+    index index;
 
-# Restart Nginx to apply the changes
+    location / {
+        try_files \$uri \$uri/ =404;
+    }
+
+    location = /redirect_me {
+        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+    }
+}"
+
+# Use sed to replace the content inside the server block
+sudo sed -i '/server {/,$d' /etc/nginx/sites-available/default
+echo "${new_string}" | sudo tee -a /etc/nginx/sites-available/default
+
 sudo service nginx restart
