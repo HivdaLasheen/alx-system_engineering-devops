@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Stop nginx
+service nginx stop
+
+# Verify nginx is not running
+service nginx status
+
+# Curl to check server response
+curl 0:80
