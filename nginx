@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Create nginx user if it does not exist
+if ! id -u nginx > /dev/null 2>&1; then
+    sudo useradd --system --no-create-home --shell /bin/false nginx
+fi
+
+# Check if configuration file exists and update if necessary
+NGINX_CONF="/etc/nginx/nginx.conf"
+DEFAULT_SITE="/etc/nginx/sites-available/default"
+
+if [ -f "$NGINX_CONF" ]; then
+    sudo sed -i 's/^user .*/user nginx;/' "$NGINX_CONF"
+fi
+
+if [ -f "$DEFAULT_SITE" ]; then
+    sudo sed -i 's/listen 80;/listen 8080;/' "$DEFAULT_SITE"
+fi
+
+# Ensure the Nginx user has proper permissions
+if [ -f "$NGINX_CONF" ]; then
+    sudo chmod 644 "$NGINX_CONF"
+fi
+
+# Restart Nginx to apply changes
+sudo systemctl restart nginx
