@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+sed -i 's/^user .*/user nginx;/' /etc/nginx/nginx.conf
+sed -i 's/listen 80;/listen 8080;/' /etc/nginx/sites-enabled/default
+systemctl restart nginx
+ps aux | grep '[n]ginx'
+nc -z 0 8080

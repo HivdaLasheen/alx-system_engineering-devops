@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# Define the Nginx configuration file
+NGINX_CONF="/etc/nginx/nginx.conf"
+
+# Ensure Nginx is not running as root and is listening on port 8080
+# Modify the nginx configuration file
+
+# Replace the user directive in the Nginx configuration to 'nginx'
+sed -i 's/^user .*/user nginx;/' $NGINX_CONF
+
+# Ensure Nginx listens on port 8080
+# This assumes there's a default server block; we will update the listen directive to port 8080
+sed -i 's/listen 80;/listen 8080;/' /etc/nginx/sites-enabled/default
+
+# Restart Nginx to apply the changes
+systemctl restart nginx
+
+# Verify that Nginx is running as the 'nginx' user
+ps aux | grep '[n]ginx'
+
+# Verify that Nginx is listening on port 8080
+nc -z 0 8080 && echo "Nginx is listening on port 8080" || echo "Nginx is not listening on port 8080"
+
