@@ -1,35 +1,3 @@
-What Happens When You Type https://www.google.com and Press Enter?
+https://www.linkedin.com/posts/heba-saad-abdelhaleem-mahmoud-577957264_what-happens-when-you-type-httpswwwgooglecom-activity-7222779845154361346-joZZ?utm_source=share&utm_medium=member_desktop 
 
-Navigating the Web Infrastructure: From Domain Names to Data Retrieval
-
-When you type a website address like "[invalid URL removed]" into your browser and hit enter, a fascinating series of events takes place behind the scenes to bring you the content you expect. Let's delve into the key components of this journey:
-
-Domain Name System (DNS): The Internet's Phonebook
-The Domain Name System (DNS) is like a massive phonebook for the internet. It translates human-readable domain names into numerical IP addresses that computers understand. When you request a website, your browser first asks a DNS server for the corresponding IP address. This address is then used to direct your request to the right server.
-
-TCP/IP: The Foundation of Internet Communication
-TCP/IP (Transmission Control Protocol/Internet Protocol) is the suite of protocols that governs how data is sent across the internet. IP handles the addressing and routing of data packets, while TCP ensures reliable delivery by establishing a connection, ordering packets, and checking for errors.
-
-Firewall: Guarding Your Network
-Firewalls act as a protective barrier between your network and the rest of the internet. They monitor incoming and outgoing traffic and can block or allow access based on a set of predefined rules. Firewalls are crucial for safeguarding your system from unauthorized access and malicious activity.
-
-HTTPS/SSL: Securing Your Connections
-HTTPS (Hypertext Transfer Protocol Secure) and SSL (Secure Sockets Layer) are protocols that encrypt the data transmitted between your browser and a website. This encryption ensures that sensitive information, such as passwords and credit card details, remains confidential during transmission. Look for the padlock icon in your browser's address bar to verify a secure connection.
-
-Load Balancer: Distributing Traffic
-When a website receives a large volume of traffic, a load balancer distributes the load across multiple servers. This prevents any single server from becoming overwhelmed and ensures smooth performance even during peak traffic periods. Load balancing also enhances redundancy, as if one server fails, the others can continue to handle requests.
-
-Web Server: Serving Web Pages
-The web server is responsible for receiving requests for web pages and serving them back to your browser. It stores website files (HTML, CSS, JavaScript, images) and handles the HTTP protocol for communication between your browser and the server. Popular web servers include Apache and Nginx.
-
-Application Server: Running Your Code
-An application server is a more sophisticated type of server that runs the logic behind dynamic web applications. It processes requests from the web server, executes code (like PHP, Python, Java), and interacts with databases or other resources to generate content tailored to the user.
-
-Database: Storing Your Data
-A database is a structured system for storing and managing data. Websites often use databases to store user accounts, product information, articles, and other content. Common database systems include MySQL, PostgreSQL, and MongoDB.
-
-Putting It All Together
-
-When you visit a website, this intricate chain of events happens in a fraction of a second. Your request travels through the network, guided by DNS, protected by firewalls and encryption, balanced by load balancers, processed by web and application servers, and finally fetches data from the database to display the website on your screen.
-
-Understanding these fundamental building blocks of web infrastructure empowers you to troubleshoot issues, optimize performance, and appreciate the complexity behind seemingly simple online interactions.
+https://medium.com/@hebasaad91/what-happens-when-you-type-https-www-google-com-and-press-enter-d626fc7285f5 
