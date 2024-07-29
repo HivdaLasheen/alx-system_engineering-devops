@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-# Creates and runs whoami command as specified user
-sudo -u "$1" whoami
